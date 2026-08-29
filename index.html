@@ -9,155 +9,708 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f3f3f3;
       color: #222;
+      line-height: 1.5;
     }
 
+    /* CABEÇALHO */
+
     header {
-      background: #1f1f1f;
+      background: #222;
       color: white;
+      padding: 35px 20px;
       text-align: center;
-      padding: 30px 20px;
+      border-bottom: 5px solid #b8860b;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 30px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     header p {
-      margin-top: 10px;
       color: #d4af37;
+      font-size: 18px;
     }
 
-    .container {
-      max-width: 800px;
+    /* CONTEÚDO */
+
+    main {
+      max-width: 850px;
       margin: auto;
-      padding: 20px;
+      padding: 25px 15px 50px;
     }
+
+    /* BOAS-VINDAS */
 
     .boas-vindas {
       background: white;
-      padding: 25px;
-      border-radius: 15px;
+      border-radius: 20px;
+      padding: 35px 25px;
       text-align: center;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
 
     .boas-vindas h2 {
-      color: #b8860b;
+      color: #9a7000;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .boas-vindas p {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
+
+    .botao-principal {
+      background: #9a7000;
+      color: white;
+      border: none;
+      padding: 16px 35px;
+      border-radius: 14px;
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    .botao-principal:hover {
+      background: #765600;
+    }
+
+    /* TÍTULO DOS MÓDULOS */
+
+    .titulo-secao {
+      text-align: center;
+      margin: 35px 0 25px;
+    }
+
+    .titulo-secao h2 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .titulo-secao p {
+      color: #777;
+      margin-top: 5px;
+    }
+
+    /* MÓDULOS */
+
+    .modulos {
+      display: grid;
+      gap: 18px;
     }
 
     .modulo {
       background: white;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border-radius: 18px;
+      padding: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      border-left: 7px solid #b8860b;
+      transition: 0.2s;
+    }
+
+    .modulo:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .modulo-numero {
+      display: inline-block;
+      background: #b8860b;
+      color: white;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      line-height: 45px;
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 12px;
     }
 
     .modulo h3 {
-      margin-top: 0;
+      display: inline;
+      font-size: 21px;
+      vertical-align: middle;
     }
 
-    button {
-      background: #b8860b;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+    .modulo p {
+      margin-top: 15px;
+      color: #555;
       font-size: 16px;
-      cursor: pointer;
     }
 
-    button:hover {
-      background: #8f6b08;
-    }
-
-    #resultado {
-      margin-top: 20px;
-      padding: 15px;
-      background: #eaf7ea;
-      border-radius: 10px;
-      text-align: center;
-      display: none;
-    }
+    /* RODAPÉ */
 
     footer {
+      background: #222;
+      color: white;
       text-align: center;
-      padding: 20px;
-      color: #777;
+      padding: 25px;
+      margin-top: 30px;
     }
+
+    footer p {
+      color: #d4af37;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 27px;
+      }
+
+      .boas-vindas h2 {
+        font-size: 27px;
+      }
+
+      .modulo {
+        padding: 20px;
+      }
+
+      .modulo h3 {
+        font-size: 18px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-<header>
-  <h1>🎓 Treinamento de Garçom</h1>
-  <p>Aprenda, pratique e evolua profissionalmente</p>
-</header>
+  <!-- CABEÇALHO -->
 
-<div class="container">
+  <header>
 
-  <div class="boas-vindas">
-    <h2>Bem-vindo!</h2>
+    <h1>🎓 Treinamento de Garçom</h1>
+
+    <p>Aprenda, pratique e evolua profissionalmente</p>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- BOAS-VINDAS -->
+
+    <section class="boas-vindas">
+
+      <h2>Bem-vindo!</h2>
+
+      <p>
+        Este mini aplicativo foi criado para ajudar profissionais
+        que desejam iniciar ou aperfeiçoar sua carreira como garçom.
+      </p>
+
+      <button class="botao-principal"
+              onclick="document.getElementById('capitulo01').scrollIntoView({behavior:'smooth'})">
+
+        Começar treinamento
+
+      </button>
+
+    </section>
+
+
+    <!-- TÍTULO -->
+
+    <section class="titulo-secao">
+
+      <h2>📚 Mapa do Treinamento</h2>
+
+      <p>30 capítulos para desenvolver sua carreira profissional.</p>
+
+    </section>
+
+
+    <!-- MÓDULOS -->
+
+    <section class="modulos">
+
+
+      <!-- 01 -->
+
+      <div class="modulo" id="capitulo01">
+
+        <span class="modulo-numero">01</span>
+
+        <h3>O Primeiro Emprego</h3>
+
+        <p>
+          Prepare-se para iniciar sua trajetória profissional
+          com segurança e responsabilidade.
+        </p>
+
+      </div>
+
+
+      <!-- 02 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">02</span>
+
+        <h3>O que Significa Ser Garçom</h3>
+
+        <p>
+          Entenda a importância e as responsabilidades
+          da profissão.
+        </p>
+
+      </div>
+
+
+      <!-- 03 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">03</span>
+
+        <h3>Pontualidade, Compromisso e Responsabilidade</h3>
+
+        <p>
+          Desenvolva atitudes essenciais para uma carreira profissional.
+        </p>
+
+      </div>
+
+
+      <!-- 04 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">04</span>
+
+        <h3>Postura Profissional</h3>
+
+        <p>
+          Aprenda como sua postura influencia a experiência do hóspede.
+        </p>
+
+      </div>
+
+
+      <!-- 05 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">05</span>
+
+        <h3>Higiene e Apresentação Pessoal</h3>
+
+        <p>
+          Cuidados fundamentais para transmitir profissionalismo.
+        </p>
+
+      </div>
+
+
+      <!-- 06 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">06</span>
+
+        <h3>Conhecendo o Salão e sua Estação</h3>
+
+        <p>
+          Conheça o ambiente de trabalho e organize sua área.
+        </p>
+
+      </div>
+
+
+      <!-- 07 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">07</span>
+
+        <h3>Mise en Place</h3>
+
+        <p>
+          Prepare corretamente o ambiente antes do serviço.
+        </p>
+
+      </div>
+
+
+      <!-- 08 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">08</span>
+
+        <h3>Organização da Mesa e dos Materiais</h3>
+
+        <p>
+          Aprenda a manter organização e eficiência no atendimento.
+        </p>
+
+      </div>
+
+
+      <!-- 09 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">09</span>
+
+        <h3>Reposição e Organização do Aparador</h3>
+
+        <p>
+          Garanta que os materiais necessários estejam sempre disponíveis.
+        </p>
+
+      </div>
+
+
+      <!-- 10 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">10</span>
+
+        <h3>Checklist de Abertura</h3>
+
+        <p>
+          Saiba como preparar corretamente o início do serviço.
+        </p>
+
+      </div>
+
+
+      <!-- 11 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">11</span>
+
+        <h3>O Primeiro Contato com o Hóspede</h3>
+
+        <p>
+          A primeira impressão pode transformar toda a experiência.
+        </p>
+
+      </div>
+
+
+      <!-- 12 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">12</span>
+
+        <h3>Comunicação Profissional</h3>
+
+        <p>
+          Desenvolva uma comunicação clara, educada e eficiente.
+        </p>
+
+      </div>
+
+
+      <!-- 13 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">13</span>
+
+        <h3>Saber Ouvir e Entender o Hóspede</h3>
+
+        <p>
+          Aprenda a identificar necessidades e expectativas.
+        </p>
+
+      </div>
+
+
+      <!-- 14 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">14</span>
+
+        <h3>Acompanhamento do Atendimento</h3>
+
+        <p>
+          Acompanhe o serviço e antecipe as necessidades do hóspede.
+        </p>
+
+      </div>
+
+
+      <!-- 15 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">15</span>
+
+        <h3>Atendendo Pessoas Diferentes</h3>
+
+        <p>
+          Desenvolva flexibilidade e empatia no atendimento.
+        </p>
+
+      </div>
+
+
+      <!-- 16 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">16</span>
+
+        <h3>Como Estudar e Conhecer o Cardápio</h3>
+
+        <p>
+          Conhecimento do cardápio gera confiança e profissionalismo.
+        </p>
+
+      </div>
+
+
+      <!-- 17 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">17</span>
+
+        <h3>Como Explicar Pratos e Bebidas</h3>
+
+        <p>
+          Aprenda a apresentar corretamente os produtos ao hóspede.
+        </p>
+
+      </div>
+
+
+      <!-- 18 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">18</span>
+
+        <h3>Dúvidas, Restrições Nutricionais e Informações Importantes</h3>
+
+        <p>
+          Saiba como lidar corretamente com informações importantes.
+        </p>
+
+      </div>
+
+
+      <!-- 19 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">19</span>
+
+        <h3>Buffet e Serviço à Mesa</h3>
+
+        <p>
+          Entenda as diferenças e os cuidados de cada tipo de serviço.
+        </p>
+
+      </div>
+
+
+      <!-- 20 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">20</span>
+
+        <h3>Água, Refrigerantes, Sucos, Cervejas e Demais Bebidas</h3>
+
+        <p>
+          Conheça o serviço correto das principais bebidas.
+        </p>
+
+      </div>
+
+
+      <!-- 21 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">21</span>
+
+        <h3>Vinhos e Serviço de Bebidas</h3>
+
+        <p>
+          Aprenda os fundamentos do serviço profissional de bebidas.
+        </p>
+
+      </div>
+
+
+      <!-- 22 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">22</span>
+
+        <h3>Café e Finalização do Atendimento</h3>
+
+        <p>
+          Finalize o atendimento mantendo qualidade e cordialidade.
+        </p>
+
+      </div>
+
+
+      <!-- 23 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">23</span>
+
+        <h3>Copos, Talheres e Etiqueta Profissional</h3>
+
+        <p>
+          Conheça os materiais e as boas práticas profissionais.
+        </p>
+
+      </div>
+
+
+      <!-- 24 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">24</span>
+
+        <h3>Comunicação entre Salão, Bar e Cozinha</h3>
+
+        <p>
+          Uma boa comunicação entre setores melhora todo o serviço.
+        </p>
+
+      </div>
+
+
+      <!-- 25 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">25</span>
+
+        <h3>Trabalho em Equipe</h3>
+
+        <p>
+          Aprenda como colaborar para alcançar melhores resultados.
+        </p>
+
+      </div>
+
+
+      <!-- 26 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">26</span>
+
+        <h3>Zero Quebra: Excelência no Serviço Começa com a Louça Intacta</h3>
+
+        <p>
+          Desenvolva consciência, cuidado e responsabilidade com os materiais.
+        </p>
+
+      </div>
+
+
+      <!-- 27 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">27</span>
+
+        <h3>Trabalhando sob Pressão</h3>
+
+        <p>
+          Mantenha organização, calma e qualidade em momentos difíceis.
+        </p>
+
+      </div>
+
+
+      <!-- 28 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">28</span>
+
+        <h3>Como Definir Prioridades</h3>
+
+        <p>
+          Saiba identificar o que deve ser resolvido primeiro.
+        </p>
+
+      </div>
+
+
+      <!-- 29 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">29</span>
+
+        <h3>Erros, Reclamações e Feedback</h3>
+
+        <p>
+          Transforme situações difíceis em oportunidades de aprendizado.
+        </p>
+
+      </div>
+
+
+      <!-- 30 -->
+
+      <div class="modulo">
+
+        <span class="modulo-numero">30</span>
+
+        <h3>De Garçom Iniciante a Profissional de Referência</h3>
+
+        <p>
+          Conclua sua jornada preparado para continuar crescendo profissionalmente.
+        </p>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <h3>🎓 Treinamento de Garçom</h3>
+
     <p>
-      Este mini aplicativo foi criado para ajudar profissionais
-      que desejam iniciar ou aperfeiçoar sua carreira como garçom.
+      Aprenda • Pratique • Evolua
     </p>
 
-    <button onclick="iniciarTreinamento()">
-      Começar treinamento
-    </button>
-  </div>
+  </footer>
 
-  <div class="modulo">
-    <h3>📚 Módulo 1 — A profissão de garçom</h3>
-    <p>Conheça as responsabilidades e a importância do profissional no atendimento.</p>
-  </div>
-
-  <div class="modulo">
-    <h3>🍽️ Módulo 2 — Mise en Place</h3>
-    <p>Aprenda a organizar corretamente o salão antes do início do serviço.</p>
-  </div>
-
-  <div class="modulo">
-    <h3>🤝 Módulo 3 — Atendimento ao cliente</h3>
-    <p>Aprenda técnicas para receber e atender os clientes com excelência.</p>
-  </div>
-
-  <div class="modulo">
-    <h3>🥂 Módulo 4 — Bebidas e serviço</h3>
-    <p>Conheça os procedimentos para servir bebidas corretamente.</p>
-  </div>
-
-  <div class="modulo">
-    <h3>⭐ Módulo 5 — Excelência profissional</h3>
-    <p>Desenvolva postura, comunicação, organização e trabalho em equipe.</p>
-  </div>
-
-  <div id="resultado">
-    🎉 Treinamento iniciado com sucesso! Escolha um módulo para começar.
-  </div>
-
-</div>
-
-<footer>
-  Treinamento Profissional de Garçom
-</footer>
-
-<script>
-  function iniciarTreinamento() {
-    document.getElementById("resultado").style.display = "block";
-  }
-</script>
 
 </body>
 </html>
